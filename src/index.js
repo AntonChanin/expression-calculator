@@ -5,6 +5,11 @@ function eval() {
 
 function expressionCalculator(expr) {
     // write your solution here
+    var x = expr.replace(/\s/g, '');
+    var sortValue = String(x).match(/(^[0-9*\/\\(\\)+-]+$)/);
+    var res = new Function('return ' + sortValue);
+    var output = res();
+    return output
 }
 
 module.exports = {
